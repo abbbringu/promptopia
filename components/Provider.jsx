@@ -1,8 +1,12 @@
-import React from 'react'
+"use client";
 
-const Provers = () => {
+import { SessionProvider } from 'next-auth/react';
+
+const Provers = ({children, session}) => {
   return (
-    <div>Provers</div>
+    <SessionProvider session={session}>
+      {children}
+    </SessionProvider>
   )
 }
 
