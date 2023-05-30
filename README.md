@@ -1,3 +1,12 @@
+# Promptopia 
+<img src="./documentation/Web%20capture_30-5-2023_194956_localhost.jpeg" alt="drawing" width="900" style="display: block; margin: auto;"/>
+
+This is a nextJS mongoDB project that lets users login and post their prompt. This project was developed alongside [tutorial](https://www.youtube.com/watch?v=wm5gMKuwSYk&t).
+The tutorial provided images, css and functions like auth, routing and next-api. It also showed how to develop the landing page, personal profile page and create prompt page.
+
+## These are the features that I independently added:
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
