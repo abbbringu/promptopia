@@ -11,6 +11,14 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
   const router = useRouter();
   const [copied, setCopied] = useState("");
 
+  const handleAuthorClick = () => {
+    if (session?.user.id === post.creator._id ){
+      router.push("profile")
+    } else {
+      router.push(`profile/${post.creator._id}`)
+    }
+  }
+
   const handleCopy = () => {
     setCopied(post.prompt);
     navigator.clipboard.writeText(post.prompt);
@@ -19,7 +27,18 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
   return (
     <div className="prompt_card">
       <div className="flex justify-between items-start gap-5">
-        <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
+        {/* Get authors information and display it 
+        
+          const handleEdit = (post) => {
+        router.push(`update-prompt?id=${post._id}`)
+    }
+        
+        
+        */}
+        <div 
+          className="flex-1 flex justify-start items-center gap-3 cursor-pointer"
+          onClick={handleAuthorClick}
+          >
           <Image
             src={post.creator.image}
             alt="user_image"
@@ -39,6 +58,7 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
         {/* Copy button */}
         <div className="copy_btn" onClick={handleCopy}>
           <Image
+            alt="Copy button"
             src={copied === post.prompt 
               ? '/assets/icons/tick.svg'
               : '/assets/icons/copy.svg'
